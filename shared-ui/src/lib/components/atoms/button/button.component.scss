@@ -27,16 +27,17 @@
   &.small {
     padding: 3px 15px;
     height: 28px;
+    font-size: 14px;
   }
 
   &.large {
     padding: 5px 23px;
     height: 34px;
+    font-size: 16px;
   }
 
   &.x-large {
     padding: 10px 30px;
-    font-size: 16px;
     height: 44px;
   }
 
@@ -46,6 +47,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: theme.$np-100;
+  font-size: 16px;
 }
 
 .button-primary {
