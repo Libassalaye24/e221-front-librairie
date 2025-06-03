@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/shared-ui",
+  "lib": {
+    "entryFile": "./src/lib/index.ts"
+  },
+  "assets": [
+    "./src/lib/assets/icons",
+    "./src/lib/assets/images"
+  ]
+}
