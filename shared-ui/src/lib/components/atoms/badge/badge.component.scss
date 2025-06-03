@@ -1,0 +1,51 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+.badge {
+  height: 22px;
+  border-radius: 5px;
+  padding: 5px 14px;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.badge.badge-primary {
+  background-color: theme.$er-600;
+  color: theme.$er-1000;
+}
+
+.badge.badge-success {
+  background-color: theme.$green-200;
+  color: theme.$green-250;
+}
+
+.badge.badge-warn {
+  background-color: theme.$war-800;
+  color: theme.$war-400;
+}
+
+.badge.badge-info {
+  background-color: theme.$inf-300;
+  color: theme.$inf-800;
+}
+
+.badge.badge-danger {
+  background-color: theme.$er-1100;
+  color: theme.$er-1200;
+}
+
+.badge.small {
+  height: 16px;
+  padding: 4px 12px;
+}
+
+.badge.large {
+  height: 22px;
+  padding: 5px 14px;
+}
+
+.badge.x-large {
+  height: 30px;
+  padding: 5px 16px;
+}
