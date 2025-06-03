@@ -41,7 +41,11 @@
         "outputDir": "dist/storybook/shared-ui",
         "configDir": "shared-ui/.storybook",
         "browserTarget": "shared-ui:build-storybook",
-        "compodoc": false
+        "compodoc": false,
+        "styles": [
+          "shared-ui/.storybook/styles/styles.scss",
+          "shared-ui/src/lib/styles/extension/theme.scss"
+        ]
       },
       "configurations": {
         "ci": {
@@ -55,7 +59,11 @@
       "options": {
         "buildTarget": "shared-ui:build-storybook",
         "staticFilePath": "dist/storybook/shared-ui",
-        "spa": true
+        "spa": true,
+        "styles": [
+          "shared-ui/.storybook/styles/styles.scss",
+          "shared-ui/src/lib/styles/extension/theme.scss"
+        ]
       },
       "configurations": {
         "ci": {
