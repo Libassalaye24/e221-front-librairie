@@ -10,6 +10,7 @@ export type ButtonSeverity = | null
   | 'primary'
   | 'contrast'
   | 'secondary';
+
 @Component({
   selector: 'lib-button',
   standalone: true,
