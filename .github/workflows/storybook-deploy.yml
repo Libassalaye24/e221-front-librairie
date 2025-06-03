@@ -47,3 +47,8 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./dist/storybook/shared-ui
           # Using the exact output directory specified in your project.json
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: read
