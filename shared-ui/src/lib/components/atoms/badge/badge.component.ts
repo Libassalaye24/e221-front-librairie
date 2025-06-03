@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonSeverity } from '../button/button.component';
 
@@ -13,4 +13,11 @@ export class BadgeComponent {
   value = input.required<string>();
   severity = input.required<ButtonSeverity>();
   size = input< 'small' | 'large' | 'x-large'>('large');
+  icon = input<string>()
+
+  clickEvent = output<boolean>()
+
+  emitOutPut() {
+    this.clickEvent.emit(true);
+  }
 }
