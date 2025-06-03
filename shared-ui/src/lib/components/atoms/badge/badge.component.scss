@@ -8,6 +8,10 @@
   font-family: "Poppins", sans-serif;
   font-size: 10px;
   font-weight: 600;
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: start;
 }
 
 .badge.badge-primary {
@@ -33,6 +37,11 @@
 .badge.badge-danger {
   background-color: theme.$er-1100;
   color: theme.$er-1200;
+}
+
+.badge.badge-secondary {
+  background-color: theme.$brown-500;
+  color: theme.$war-400;
 }
 
 .badge.small {

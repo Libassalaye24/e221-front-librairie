@@ -33,3 +33,11 @@ export const Default: Story = {
     severity: 'primary',
   },
 };
+
+export const WithIcon: Story = {
+  args: {
+    value: 'With icon',
+    severity: 'warn',
+    icon: 'pi pi-times'
+  },
+};
