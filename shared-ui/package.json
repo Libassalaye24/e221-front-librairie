@@ -2,25 +2,46 @@
   "root": "shared-ui",
   "sourceRoot": "shared-ui/src",
   "projectType": "library",
-  "tags": ["scope:myteam"],
+  "tags": [
+    "scope:myteam"
+  ],
   "namedInputs": {
-    "default": ["{projectRoot}//*"],
-    "production": ["!{projectRoot}//*.spec.tsx"]
+    "default": [
+      "{projectRoot}//*"
+    ],
+    "production": [
+      "!{projectRoot}//*.spec.tsx"
+    ]
   },
   "targets": {
     "test": {
-      "inputs": ["default", "^production"],
+      "inputs": [
+        "default",
+        "^production"
+      ],
       "outputs": [],
-      "dependsOn": ["build"],
+      "dependsOn": [
+        "build"
+      ],
       "executor": "@nx/jest:jest",
       "options": {}
     },
     "build": {
-      "inputs": ["production", "^production"],
-      "outputs": ["{workspaceRoot}/dist/shared-ui"],
-      "dependsOn": ["^build"],
+      "inputs": [
+        "production",
+        "^production"
+      ],
+      "outputs": [
+        "{workspaceRoot}/dist/shared-ui"
+      ],
+      "dependsOn": [
+        "^build"
+      ],
       "executor": "@nx/js:tsc",
       "options": {}
     }
+  },
+  "dependencies": {
+    "primeicons": "^7.0.0"
   }
 }
