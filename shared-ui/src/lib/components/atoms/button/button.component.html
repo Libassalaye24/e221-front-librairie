@@ -1,0 +1,21 @@
+<button
+  class="button-content button-{{severity()}} {{size()}}  {{rounded()}}"
+  [ngClass]="{ 'outlined' : variant() === 'outlined' }"
+  [disabled]="disabled() || loading()"
+>
+  @if (leftIcon() && !loading()) {
+    <i [ngClass]="leftIcon()"></i>
+  }
+
+  @if (label() && !loading()) {
+    <span class="button-label">{{ label() }}</span>
+  }
+
+  @if (rightIcon() && !loading()) {
+    <i [ngClass]="rightIcon()" class="button-right-icon"></i>
+  }
+
+  @if (loading()) {
+    <i class="pi pi-spin pi-spinner"></i>
+  }
+</button>

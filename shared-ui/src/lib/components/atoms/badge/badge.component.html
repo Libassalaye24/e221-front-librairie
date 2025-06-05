@@ -1,0 +1,9 @@
+<div
+  class="badge badge-{{severity()}}"
+  [ngClass]="size()"
+>
+  <span>{{ value() }}</span>
+  @if (icon()) {
+    <i class="{{ icon() }} cursor-pointer" (click)="emitOutPut()"></i>
+  }
+</div>

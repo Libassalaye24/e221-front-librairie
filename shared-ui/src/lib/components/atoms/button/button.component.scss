@@ -1,0 +1,87 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+.button-content {
+  @include theme.centering(
+    $horizontal: center,
+    $vertical: center
+  );
+  background-color: theme.$er-1000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  top: 8px;
+  left: 26px;
+  border-radius: 100px;
+  padding: 5px 23px;
+  gap: 10px;
+  height: 34px;
+
+  &:hover {
+    background-color: theme.$er-500;
+  }
+
+  &:disabled {
+    opacity: 70%;
+    cursor: not-allowed;
+  }
+
+  &.small {
+    padding: 3px 15px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  &.large {
+    padding: 5px 23px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  &.x-large {
+    padding: 10px 30px;
+    height: 44px;
+  }
+
+  &.rounded {
+    border-radius: 10px;
+  }
+
+  &.rounded-full {
+    border-radius: 100px;
+  }
+
+}
+
+.button-label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: theme.$np-100;
+  font-size: 16px;
+}
+
+.button-primary {
+  background-color: theme.$er-1000;
+  &:hover {
+    background-color: theme.$er-500;
+  }
+}
+
+.button-primary.outlined{
+  background-color: theme.$np-100;
+  color: theme.$er-1000;
+  border: theme.$er-1000 1px solid;
+  .button-label {
+    color: theme.$er-1000;
+  }
+}
+
+.button-secondary {
+  background-color: theme.$brown-500;
+  &:hover {
+    background-color: theme.$brown-300;
+  }
+
+}
+
+.button-right-icon {
+  color: theme.$np-100;
+}
