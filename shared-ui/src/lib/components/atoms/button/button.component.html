@@ -1,7 +1,7 @@
 <button
-  class="button-content button-{{severity()}} {{size()}}"
+  class="button-content button-{{severity()}} {{size()}}  {{rounded()}}"
   [ngClass]="{ 'outlined' : variant() === 'outlined' }"
-  [disabled]="disabled()"
+  [disabled]="disabled() || loading()"
 >
   @if (leftIcon() && !loading()) {
     <i [ngClass]="leftIcon()"></i>

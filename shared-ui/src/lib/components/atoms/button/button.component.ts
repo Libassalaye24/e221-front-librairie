@@ -29,6 +29,7 @@ export class ButtonComponent implements OnInit {
   outlined = input<boolean>(false);
   severity = input.required<ButtonSeverity>();
   size = input< 'small' | 'large' | 'x-large'>('large');
+  rounded = input< 'rounded' | 'rounded-full' | ''>('');
 
   constructor() {}
 

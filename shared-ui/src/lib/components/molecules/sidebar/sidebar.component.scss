@@ -1,0 +1,318 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+:host {
+  display: block;
+  @include theme.dimensions(0, 100vh);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.img-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.divider {
+  border-bottom: 1px solid theme.$np-25;
+}
+
+.float-label {
+  margin: 0 8px;
+}
+
+.sidebar-container {
+  background-color: theme.$np-100;
+  @include theme.dimensions(0, 100vh);
+  @include theme.centering(null, null, column);
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: width;
+  overflow: hidden;
+  border-right: 2px theme.$brown-50 solid;
+
+  &.sidebar-collapsed {
+    @include theme.dimensions(80px);
+  }
+
+  &.sidebar-expanded {
+    @include theme.dimensions(271px);
+  }
+}
+
+//@media (max-width: 768px) {
+//  .sidebar-container {
+//    &.sidebar-expanded {
+//      @include theme.dimensions(80px);
+//    }
+//
+//    &.sidebar-collapsed {
+//      @include theme.dimensions(271px);
+//    }
+//  }
+//}
+
+
+.header {
+  padding: 9px 1px 9px 1px;
+  transition: padding 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .sidebar-collapsed & {
+    padding: 24px 8px;
+  }
+}
+
+.header-content {
+  @include theme.centering(null, center);
+  transition: justify-content 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.justify-center {
+    @include theme.centering(center);
+  }
+
+  &.justify-between {
+    @include theme.centering(center);
+  }
+}
+
+.header-info {
+  @apply flex flex-col gap-2 justify-center items-center;
+  .title {
+    @include theme.appearance(15px, 500, theme.$np-0);
+    font-family: "Poppins", sans-serif;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    @include theme.appearance(15px, 500, theme.$np-0);
+    font-family: "Poppins", sans-serif;
+    white-space: nowrap;
+  }
+}
+
+.toggle-button {
+  @include theme.appearance(null, null, theme.$np-60);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 150ms ease;
+
+  &:hover {
+    @include theme.appearance(null, null, theme.$np-100);
+  }
+
+  .pi {
+    @include theme.appearance(1.25rem);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.navigation {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 0;
+
+  &::-webkit-scrollbar {
+    @include theme.dimensions(4px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: theme.$np-100;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: theme.$brown-50;
+    border-radius: 2px;
+  }
+}
+
+.menu-section {
+  margin-bottom: 2rem;
+
+  &.border-separator {
+    border-top: 1px solid theme.$np-25;
+    padding-top: 1rem;
+  }
+}
+
+.section-header {
+  @include theme.centering(flex-start, center);
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 10px 0 21px;
+
+  .section-title {
+    @include theme.appearance(null, null, theme.$np-0);
+  }
+}
+
+.section-title {
+  @include theme.appearance(0.65rem, 600, theme.$np-100);
+  margin: 0;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transition: color 150ms ease;
+}
+
+.section-toggle {
+  background: none;
+  border: none;
+  @include theme.appearance(null, null, theme.$np-50);
+  padding: 0;
+  cursor: pointer;
+  @include theme.centering(center, center);
+  @include theme.dimensions(24px, 24px);
+
+  &:hover {
+    @include theme.appearance(null, null, theme.$np-90);
+  }
+
+  .pi {
+    @include theme.appearance(10px);
+  }
+}
+
+.section-content {
+  overflow: hidden;
+
+  ul {
+    gap: 4px;
+    @include theme.centering(null, null, column);
+  }
+}
+
+.menu-item-wrapper {
+  transition: height 200ms ease;
+}
+
+.menu-item {
+  @include theme.centering(null, center);
+  padding: 12px 18px;
+  cursor: pointer;
+  @include theme.appearance(null, null, theme.$np-80);
+  text-decoration: none;
+  border-radius: 10px;
+  margin: 0 8px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: theme.$er-1000;
+  &:hover {
+    background-color: theme.$brown-50;
+  }
+
+  &.justify-center {
+    @include theme.centering(center);
+    margin: 0 10px;
+    padding: 7px 10px;
+    border-radius: 8px;
+  }
+
+  .icon {
+    @include theme.dimensions(0, 0, 24px);
+    @include theme.centering(center, center);
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+  }
+
+  .label {
+    font-size: 14px;
+    white-space: nowrap;
+    margin-left: 0.4rem;
+  }
+
+  .icon,
+  .label {
+    color: theme.$np-100;
+  }
+
+  .notification {
+    margin-left: auto;
+    @include theme.dimensions(0.5rem, 0.5rem);
+    background-color: theme.$brown-50;
+    border-radius: 50%;
+  }
+  &.active {
+    background-color: theme.$brown-50;
+  }
+}
+
+.actions-section {
+  margin-bottom: 1.5rem;
+
+  &.border-separator {
+    border-top: 1px solid theme.$np-25;
+    padding-top: 1rem;
+  }
+}
+
+.action-item-container {
+  margin: 0 1rem 0.5rem 1rem;
+  transition: margin 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.px-1 {
+    margin: 0 0.25rem 0.5rem 0.25rem;
+  }
+}
+
+.action-item {
+  border-radius: 8px;
+  border-width: 1px;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.action-collapsed {
+    padding: 0.25rem;
+  }
+
+  &.action-expanded {
+    padding: 0.5rem;
+  }
+
+  &.purple-border {
+    border-color: theme.$purple-600;
+    background-color: rgba(theme.$purple-950, 0.4);
+  }
+
+  &.green-border {
+    border-color: theme.$su-600;
+    background-color: rgba(theme.$su-950, 0.4);
+  }
+
+  &.blue-border {
+    border-color: theme.$inf-600;
+    background-color: rgba(theme.$inf-950, 0.4);
+  }
+}
+
+.action-code-collapsed {
+  text-align: center;
+  @include theme.appearance(0.75rem, 700, theme.$np-100);
+  white-space: nowrap;
+}
+
+.action-content {
+  @include theme.centering(null, center);
+
+  .action-code {
+    @include theme.appearance(0.75rem, 700, theme.$np-100);
+    @include theme.dimensions(0, 0, 2rem);
+    white-space: nowrap;
+  }
+
+  .action-text {
+    @include theme.appearance(0.75rem, null, theme.$np-100);
+    white-space: nowrap;
+  }
+}
+
+.footer {
+  padding: 1rem;
+  border-top: 1px solid theme.$np-20;
+
+  &.border-separator {
+    border-top: 1px solid theme.$np-25;
+  }
+}
+
+.footer-buttons {
+  @include theme.centering(center);
+  gap: 1rem;
+}
