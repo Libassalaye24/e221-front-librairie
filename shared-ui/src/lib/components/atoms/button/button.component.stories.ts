@@ -26,6 +26,10 @@ const meta: Meta<ButtonComponent> = {
       control: 'select',
       options: ['primary', 'accent', 'warn', 'success', 'info', 'danger'], // ajustez selon vos valeurs
     },
+    rounded: {
+      control: 'select',
+      options: ['rounded', 'rounded-full']
+    }
   },
 };
 export default meta;
@@ -37,6 +41,7 @@ export const Primary: Story = {
     severity: 'primary',
     leftIcon: '',
     rightIcon: '',
+    rounded: 'rounded-full'
   },
 };
 
@@ -47,6 +52,7 @@ export const Outlined: Story = {
     severity: 'primary',
     leftIcon: '',
     rightIcon: '',
+    rounded: 'rounded'
   },
 };
 
@@ -57,6 +63,7 @@ export const Secondary: Story = {
     severity: 'secondary',
     leftIcon: '',
     rightIcon: '',
+    rounded: 'rounded'
   },
 };
 export const Text: Story = {
@@ -66,6 +73,7 @@ export const Text: Story = {
     severity: 'primary',
     leftIcon: '',
     rightIcon: '',
+    rounded: ''
   },
 };
 
@@ -75,6 +83,7 @@ export const WithIcons: Story = {
     severity: 'primary',
     leftIcon: 'pi pi-check',
     rightIcon: 'pi pi-angle-right',
+    rounded: ''
   },
 };
 

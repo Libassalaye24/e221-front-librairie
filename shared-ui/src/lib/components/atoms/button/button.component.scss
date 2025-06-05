@@ -41,6 +41,14 @@
     height: 44px;
   }
 
+  &.rounded {
+    border-radius: 10px;
+  }
+
+  &.rounded-full {
+    border-radius: 100px;
+  }
+
 }
 
 .button-label {
