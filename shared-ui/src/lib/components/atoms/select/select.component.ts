@@ -50,7 +50,7 @@ export class SelectComponent implements OnInit {
 
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
-      selectedCity: ['', [Validators.required]],
+      selectedCity: ['5', [Validators.required]],
     });
   }
 }
