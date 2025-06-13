@@ -1,0 +1,128 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+
+table, tbody {
+  overflow: visible !important;
+}
+
+table {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  color: theme.$np-0;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  thead {
+    tr {
+      th {
+        color: theme.$brown-600;
+        font-family: Manrope, serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0;
+        //min-width: 200px;
+      }
+    }
+  }
+
+  td, th {
+
+    height: 40px;
+    padding: 10px 5px;
+    white-space: nowrap;
+
+  }
+
+  tr {
+    width: 100%;
+  }
+  // Pour la première ligne
+  tr:first-child th {
+
+    &:first-child {
+      border-top-left-radius: 0.5rem; // rounded-tl-lg = 0.5rem = 8px
+    }
+
+    &:last-child {
+      border-top-right-radius: 0.5rem;
+    }
+  }
+
+  // sauf la premiere ligne
+  tr:not(:has(th)) {
+    background-color: theme.$np-100;
+    box-shadow: 0 4px 19.6px 0 theme.$np-shadow;
+    height: 60px;
+    border-radius: 7px;
+  }
+
+  tr:last-child {
+    box-shadow: 0 4px 19.6px 0 theme.$np-shadow;
+  }
+
+  // Pour la dernière ligne
+  tr:last-child td {
+    &:first-child {
+      border-bottom-left-radius: 0.5rem; // `rounded-bl-lg`
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 0.5rem; // `rounded-br-lg`
+    }
+  }
+
+}
+
+
+
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+
+:host ::ng-deep {
+  .p-paginator {
+    background-color: theme.$np-100;
+    box-shadow: 4px 4px 24.2px 0 #0000001C;
+    height: 45px;
+    border-radius: 5px;
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .p-paginator-page {
+    border-radius: 5px;
+    color: theme.$np-150;
+  }
+
+  .p-paginator-page.p-paginator-page-selected {
+    background-color: theme.$brown-50;
+    color: theme.$np-100;
+  }
+
+  .p-paginator-prev {
+    color: theme.$np-140;
+    border-radius: 5px;
+  }
+
+  .p-paginator-next {
+    color: theme.$np-140;
+    border-radius: 5px;
+  }
+}
