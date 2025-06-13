@@ -1,0 +1,60 @@
+
+
+@use "../../../styles/extension/theme" as theme;
+
+:host ::ng-deep {
+  .tabs-container {
+    height: 56px;
+    border-radius: 5px;
+    background-color: theme.$np-100;
+    //box-shadow: 4px 4px 17.6px 0 theme.$np-shadow;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .tabs-item {
+    cursor: pointer;
+    width: 100%;
+    height: 56px;
+    gap: 10px;
+    border-radius: 5px;
+    padding: 26px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0;
+    &:hover {
+      border-bottom: 4px solid theme.$np-130;
+    }
+  }
+
+  .tabs-item.active {
+    background-color: theme.$np-130;
+    color: theme.$np-100;
+    border-bottom: theme.$brown-50 4px solid;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0;
+  }
+
+  .template-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: theme.$np-100;
+  }
+
+  .tabs-content {
+    @apply flex flex-col justify-between ;
+    gap: 20px;
+  }
+}
+
