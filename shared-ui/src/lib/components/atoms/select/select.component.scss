@@ -1,0 +1,101 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+:host ::ng-deep {
+  --p-select-padding-y: 5px;
+  --p-select-padding-x: 10px;
+  --p-select-color: #{theme.$np-20};
+  --p-select-background: #{theme.$np-100};
+  --p-select-placeholder-color: #{theme.$np-0};
+
+  label,
+  .p-select-label,
+  .p-select-label.p-placeholder {
+    font-size: 16px;
+  }
+
+  label {
+    color: theme.$np-0;
+  }
+
+  form.card {
+    gap: 7px;
+  }
+
+  .p-select-dropdown-icon {
+    //@include theme.dimensions(12px, 12px);
+  }
+
+  .default {
+    --p-select-border-color: #{theme.$np-20};
+    --p-select-hover-border-color: #{theme.$np-30};
+    --p-select-focus-border-color: #{theme.$np-10};
+  }
+
+  .error {
+    --p-select-border-color: #{theme.$er-500};
+    --p-select-hover-border-color: #{theme.$er-500};
+    --p-select-focus-border-color: #{theme.$er-500};
+  }
+
+  .warning {
+    --p-select-border-color: #{theme.$war-500};
+    --p-select-focus-border-color: #{theme.$war-500};
+    --p-select-hover-border-color: #{theme.$war-500};
+  }
+
+  .no-response {
+    --p-select-border-color: #{theme.$er-500};
+    --p-select-focus-border-color: #{theme.$er-500};
+    --p-select-hover-border-color: #{theme.$er-500};
+  }
+
+  .disabled {
+    --p-select-color: #{theme.$np-50};
+    --p-select-background: #{theme.$np-50};
+    --p-select-border-color: #{theme.$np-50};
+    --p-select-focus-border-color: #{theme.$np-50};
+    --p-select-hover-border-color: #{theme.$np-50};
+
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+
+    label {
+      color: theme.$np-0;
+    }
+  }
+
+  .helper-text {
+    gap: 0.5rem;
+    font-size: 12px;
+    @include theme.centering(null, center);
+
+    &.helper-info {
+      color: theme.$np-70;
+      i {
+        color: theme.$np-70;
+      }
+    }
+
+    &.helper-error {
+      color: theme.$er-500;
+      i {
+        color: theme.$er-500;
+      }
+    }
+
+    &.helper-warning {
+      color: theme.$war-500;
+      i {
+        color: theme.$war-500;
+      }
+    }
+
+    &.helper-disabled {
+      color: theme.$np-50;
+      i {
+        color: theme.$np-50;
+      }
+    }
+  }
+}

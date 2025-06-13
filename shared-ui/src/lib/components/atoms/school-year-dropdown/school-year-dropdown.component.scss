@@ -1,0 +1,56 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+
+.flex {
+  display: flex;
+}
+.align-items-center {
+  align-items: center;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.icon {
+  color: theme.$brown-50;
+}
+
+
+:host ::ng-deep {
+  .p-dropdown {
+    background-color: theme.$np-100;
+    box-shadow: 4px 4px 17.6px 0px #0000001A;
+  }
+  .p-select-label {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    color: theme.$np-0;
+  }
+
+  .p-select-option {
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: theme.$np-0;
+  }
+  .p-dropdown.p-focus {
+    border: 1px solid theme.$np-10 !important;
+    //--p-inputtext-hover-border-color: #{theme.$np-30};
+    //--p-inputtext-focus-border-color: #{theme.$np-10};
+  }
+
+  .p-select-option.p-select-option-selected.p-focus{
+    background-color: theme.$np-120;
+    color: theme.$np-0;
+  }
+
+  .p-select-option.p-select-option{
+    &:hover {
+      background-color: theme.$np-120;
+      color: theme.$np-0;
+    }
+  }
+  .p-select-option.p-select-option-selected.icon {
+    color: theme.$np-100;
+  }
+
+}
