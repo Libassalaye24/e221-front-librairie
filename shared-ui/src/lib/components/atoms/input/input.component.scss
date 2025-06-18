@@ -1,0 +1,132 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+
+:host ::ng-deep {
+  --p-inputtext-padding-y: 5px;
+  --p-inputtext-padding-x: 10px;
+  --p-inputtext-color: #{theme.$np-10};
+  --p-inputtext-background: #{theme.$np-100};
+  --p-inputtext-placeholder-color: #{theme.$np-110};
+
+  label,
+  .p-inputtext,
+  .p-inputtext.p-placeholder {
+    font-size: 15px;
+  }
+
+  label {
+    color: theme.$np-10;
+  }
+
+  form.card {
+    gap: 7px;
+  }
+
+  .default {
+    --p-inputtext-border-color: #{theme.$np-110};
+    --p-inputtext-hover-border-color: #{theme.$np-30};
+    --p-inputtext-focus-border-color: #{theme.$np-10};
+  }
+
+  .input-rounded {
+    --p-inputtext-border-radius: 10px;
+  }
+
+  .input-rounded-full {
+    --p-inputtext-border-radius: 1000px;
+  }
+
+  .invalid {
+    --p-inputtext-border-color: #{theme.$er-500};
+    --p-inputtext-hover-border-color: #{theme.$er-500};
+    --p-inputtext-focus-border-color: #{theme.$er-500};
+  }
+
+  .warning {
+    --p-inputtext-border-color: #{theme.$war-500};
+    --p-inputtext-focus-border-color: #{theme.$war-500};
+    --p-inputtext-hover-border-color: #{theme.$war-500};
+  }
+
+  .success {
+    --p-inputtext-border-color: #{theme.$su-500};
+    --p-inputtext-focus-border-color: #{theme.$su-500};
+    --p-inputtext-hover-border-color: #{theme.$su-500};
+  }
+
+  .no-response {
+    --p-inputtext-border-color: #{theme.$er-500};
+    --p-inputtext-focus-border-color: #{theme.$er-500};
+    --p-inputtext-hover-border-color: #{theme.$er-500};
+  }
+
+  .no-fill {
+    --p-inputtext-background: #{theme.$np-100};
+    --p-inputtext-border-color: #{theme.$np-20};
+    //--p-inputtext-hover-border-color: #{theme.$np-30};
+    //--p-inputtext-focus-border-color: #{theme.$purple-300};
+    --p-inputtext-hover-border-color: #{theme.$np-30};
+    --p-inputtext-focus-border-color: #{theme.$np-10};
+  }
+
+  .disabled {
+    --p-inputtext-color: #{theme.$np-50};
+    --p-inputtext-background: #{theme.$np-100};
+    --p-inputtext-border-color: #{theme.$np-50};
+    --p-inputtext-focus-border-color: #{theme.$np-50};
+    --p-inputtext-hover-border-color: #{theme.$np-50};
+
+    cursor: not-allowed;
+    pointer-events: none;
+
+    label {
+      color: theme.$np-50;
+    }
+  }
+
+  .helper-text {
+    gap: 0.5rem;
+    font-size: 12px;
+    @include theme.centering(null, center);
+
+    &.helper-info {
+      color: theme.$np-70;
+      i {
+        color: theme.$np-70;
+      }
+    }
+
+    &.helper-success {
+      color: theme.$su-500;
+      i {
+        color: theme.$su-500;
+      }
+    }
+
+    &.helper-error {
+      color: theme.$er-500;
+      i {
+        color: theme.$er-500;
+      }
+    }
+
+    &.helper-warning {
+      color: theme.$war-700;
+      i {
+        color: theme.$war-700;
+      }
+    }
+
+    &.helper-disabled {
+      color: theme.$np-50;
+      i {
+        color: theme.$np-50;
+      }
+    }
+  }
+
+  .p-inputicon  {
+    color: theme.$np-110;
+    width: 28px; height: 28px;
+  }
+}

@@ -1,0 +1,164 @@
+<div class="flex flex-col gap-2">
+  <div class="overflow-x-auto">
+    <div class="inline-block min-w-full">
+      <div class="overflow-hidden">
+        <table class="min-w-full">
+          <thead>
+          <tr>
+            @for (column of config?.columns!; track column.header; let index = $index) {
+              <th
+                [class]="column.sortable ? 'cursor-pointer ' + (column.className || '') : column.className || ''"
+                (click)="column.sortable && handleSort(column.header)"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex gap-4">
+                    @if (config.withCheckBox && index == 0) {
+                      <input id="link-checkbox-{{index+500}}" type="checkbox"
+                             [checked]="isAllSelected"
+                             (change)="onSelectAllChange($event)"
+                             class="w-4 h-4 text-myAfretyOrange-active bg-myAfretySurface-section cursor-pointer border-myAfretySurface-border rounded focus:ring-myAfretyOrange-active ">
+                    }
+                    <span>{{ column.header }}</span>
+
+                  </div>
+
+                  @if (column.sortable) {
+                    <span class="inline-flex ml-2">
+                          @if (config.sortColumn === column.header) {
+                            @if (config.sortDirection === 'asc') {
+                              <!--                              <i-lucide name="chevron-up" class="w-4 h-4"/>-->
+                            } @else {
+                              <!--                              <i-lucide name="chevron-down" class="w-4 h-4"/>-->
+                            }
+                          } @else {
+                            <!--                            <i-lucide name="chevron-down" class="w-4 h-4"/>-->
+                          }
+                        </span>
+                  }
+                </div>
+              </th>
+            }
+          </tr>
+          </thead>
+          <tbody class="text-corps font-corps">
+            @if (config) {
+              @if (config && config.loading) {
+                @for (i of loadingArray; track i) {
+                  <tr class="animate-pulse">
+                    @for (column of config.columns; track column.header) {
+                      <td [class]="column.className || ''">
+                        <!--                    <app-table-loader></app-table-loader>-->
+                      </td>
+                    }
+                  </tr>
+                }
+              } @else if (config.pagination && config.pagination.content && config.pagination.content.length > 0) {
+                @for (item of config.pagination.content; track trackBy(item)) {
+                  <tr>
+                    @for (column of config.columns; track column.header; let index= $index) {
+                      <td [class]="column.className || ''">
+                        <div class="{{ column.class }}">
+                          @if (config.withCheckBox && index == 0) {
+                            <input id="link-checkbox-{{index}}" type="checkbox"
+                                   [checked]="isSelected(item)"
+                                   (change)="onSelectItemChange($event, item)"
+                                   class="w-4 h-4 me-4 text-myAfretyOrange-active bg-myAfretySurface-section cursor-pointer border-myAfretySurface-border rounded focus:ring-myAfretyOrange-active ">
+                          }
+                          @if (column.template) {
+                            @if (isTemplateRef(column.template)) {
+                              <ng-container
+                                [ngTemplateOutlet]="column.template"
+                                [ngTemplateOutletContext]="{ $implicit: item }"
+                              >
+                              </ng-container>
+                            } @else {
+                              <div [innerHTML]="column.template(item)"></div>
+                            }
+                          } @else {
+                            @if (column.isLink) {
+                              <a
+                                (click)="handleLinkClick(item, column)"
+                                class="underline underline-offset-4 cursor-pointer"
+                              >
+                                {{ getCellValue(item, column) }}
+                              </a>
+                            } @else {
+
+                              @if (column.isAmount) {
+                                {{ getCellValue(item, column) }}
+                              } @else {
+
+                                <!--                          @if (column.field && column.field === 'orderUrl') {-->
+                                  <!--                           <div class="flex items-center gap-2">-->
+                                  <!--                             {{ getCellValue(item, column) }}-->
+                                  <!--                             <img src="assets/icons/purchase/link.svg" alt="link">-->
+                                  <!--                           </div>-->
+                                  <!--                          } @else {-->
+                                  <!--                            {{ getCellValue(item, column) }}-->
+                                  <!--                          }-->
+                                {{ getCellValue(item, column) }}
+                              }
+                            }
+                          }
+                          @if (column.showThreeDotsAction) {
+                            @if (config.actions && config.actions.length > 0) {
+                              <div class="">
+                                <p-menu #menu [model]="config.actions" [popup]="true" />
+                                <img (click)="menu.toggle($event)" class="cursor-pointer" src="assets/icons/three-dot.svg" alt="collapse ">
+                              </div>
+                            }
+                          }
+                        </div>
+                      </td>
+                    }
+
+                  </tr>
+                }
+
+              } @else {
+                <tr>
+                  <td
+                    [colSpan]="config.columns.length"
+                    class=" text-center "
+                  >
+                    {{ config.emptyMessage || 'No data available' }}
+                  </td>
+                </tr>
+              }
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  @if (!config.disablePagination)
+  {
+    @if (config.pagination && config.pagination.content.length > 0) {
+      <div class="pagination md:gap-4">
+          <div class="select-size flex gap-4 items-center">
+            <span class="sm-only mx-1 pagination-title">
+              Eléments / page
+            </span>
+            <p-select [options]="options" optionLabel="label" optionValue="value"
+                      [(ngModel)]="config.pagination.size"
+                      (ngModelChange)="onSizeChange($event)" />
+          </div>
+        <p-paginator
+          [first]="config.pagination.number * config.pagination.size"
+          [rows]="config.pagination.size"
+          [totalRecords]="config.pagination.totalElements"
+          [showFirstLastIcon]="false"
+          [showCurrentPageReport]="true"
+          currentPageReportTemplate=""
+          (onPageChange)="onPageChange($event)">
+        </p-paginator>
+      </div>
+
+    }
+  } @else {
+    <div class="">
+    </div>
+  }
+
+</div>

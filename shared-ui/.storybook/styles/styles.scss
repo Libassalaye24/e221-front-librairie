@@ -6,3 +6,95 @@
 
 /* Prime Icons */
 @import 'primeicons/primeicons.css';
+
+
+/* PrimeNG Icon Field Fixes */
+:root {
+  --icon-padding: 0.75rem;
+
+  /* Size variables for consistency */
+  --input-small-height: 32px;
+  --input-small-font-size: 0.75rem;
+  --input-small-icon-size: 0.875rem;
+  --input-small-padding: 0.25rem 0.5rem;
+
+  --input-medium-height: 40px;
+  --input-medium-icon-size: 1rem;
+  --input-medium-font-size: 0.875rem;
+  --input-medium-padding: 0.5rem 0.75rem;
+
+  --input-large-height: 48px;
+  --input-large-font-size: 1rem;
+  --input-large-icon-size: 1.25rem;
+  --input-large-padding: 0.75rem 1rem;
+}
+
+/* Global fixes for PrimeNG components */
+.p-component {
+  /* Ensure PrimeNG components inherit font settings properly */
+  font-size: inherit;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Base styling for the IconField component */
+.p-iconfield {
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  /* Input styling */
+  .p-inputtext {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Icon styling */
+  .p-icon-wrapper {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    justify-content: center;
+    transform: translateY(-50%);
+
+    /* Icon positioning */
+    &[data-pc-section='iconleft'] {
+      left: var(--icon-padding);
+    }
+
+    &[data-pc-section='iconright'] {
+      right: var(--icon-padding);
+    }
+  }
+}
+
+/* Override PrimeNG's focus styles */
+.p-inputtext:enabled:focus {
+  box-shadow: none !important;
+}
+
+/* Fix for icon spacing in different input sizes */
+.icon-field-small,
+.icon-field-medium,
+.icon-field-large {
+  .p-icon-wrapper,
+  .p-inputtext {
+    box-sizing: border-box !important;
+  }
+}
+
+/* Force sizing properties */
+.size-small,
+.size-medium,
+.size-large {
+  .p-inputtext,
+  .p-iconfield,
+  .p-icon-wrapper,
+  .input-field-wrapper {
+    box-sizing: border-box !important;
+  }
+}

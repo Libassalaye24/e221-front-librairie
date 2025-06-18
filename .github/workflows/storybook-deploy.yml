@@ -30,7 +30,7 @@ jobs:
 
       # This uses your NxCloud setup from nx.json
       - name: Nx Cloud Auth
-        run: npx nx-cloud start-ci-run
+        run: echo "Nx Cloud skipped"
 
       - name: Install Dependencies
         run: npm ci

@@ -1,0 +1,42 @@
+<div class="navbar-content ">
+  <button
+    type="button"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+    (click)="toggleCollapse()"
+    aria-label="Toggle navigation"
+    aria-controls="hs-sidebar-content-push"
+    data-hs-overlay="#hs-sidebar-content-push"
+    class=" flex justify-center items-center gap-x-3 size-8 text-sm text-gray-600 hover:color-gray-100 rounded-full disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:color-gray-100 dark:text-neutral-400 dark:hover:color-neutral-700 dark:focus:color-neutral-700 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+  >
+    <img class="w-24 h-24 " src="assets/icons/collapse-sidebar.svg" alt="collapse ">
+  </button>
+
+  <div class="search-input">
+    <lib-input
+      class="flex-1"
+      [ngModel]="searchControl2"
+      [placeholder]="'Rechercher ...'"
+      [leftIcon]="'pi pi-search'"
+      [inputType]="'text'"
+      [customClass]="'w-[450px]'"
+      [size]="'small'"
+    >
+    </lib-input>
+  </div>
+
+  <lib-school-year-dropdown class="school-year-dropdown">
+  </lib-school-year-dropdown>
+
+  <div class="flex items-center gap-4">
+    <img
+      src="assets/icons/bell-ring.svg"
+      class="notification cursor-pointer" alt="notification"
+    >
+    <img src="assets/images/profil.png"
+         class="profil-image cursor-pointer"
+         alt="profil"
+    >
+  </div>
+
+</div>

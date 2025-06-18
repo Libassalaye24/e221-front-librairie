@@ -1,0 +1,53 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+
+.navbar-content {
+  @include theme.centering(
+    $horizontal: space-between,
+    $vertical: center,
+    $direction: row,
+    $wrap: nowrap
+  );
+  height: 60px;
+  padding: 5px;
+  background-color: theme.$np-100;
+  box-shadow: 0 48px 65.3px 0 theme.$np-shadow;
+}
+
+.search-input {
+  display: flex;
+  width: 450px;
+}
+
+.school-year-dropdown{
+  display: flex;
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .school-year-dropdown {
+    display: none;
+  }
+
+  .search-input {
+    display: none;
+  }
+}
+
+@media (max-width: 834px) {
+  .search-input {
+    display: none;
+  }
+}
+
+.notification{
+  width: 20px;
+  height: 20px;
+}
+
+.profil-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}

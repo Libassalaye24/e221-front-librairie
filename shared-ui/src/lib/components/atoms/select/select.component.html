@@ -1,0 +1,27 @@
+<form [formGroup]="formGroup" class="card flex flex-col justify-center">
+  <label for="selectedCity">
+    <span class="label {{ variant }}">{{ label }}</span>
+    <span *ngIf="required" class="ml-1">
+      <img [src]="assets" alt="" />
+    </span>
+  </label>
+  <p-select
+    [size]="size"
+    optionLabel="label"
+    [options]="options"
+    [placeholder]="placeholder"
+    class="w-full {{ variant }}"
+    id="selectedCity"
+    formControlName="selectedCity"
+    [disabled]="variant === 'disabled'">
+
+  </p-select>
+  <small
+    *ngIf="helperText"
+    class="helper-text gap-2"
+    [ngClass]="'helper-' + helperType"
+  >
+    <i [ngClass]="getHelperIconClass()"></i>
+    <span>{{ helperText }}</span>
+  </small>
+</form>

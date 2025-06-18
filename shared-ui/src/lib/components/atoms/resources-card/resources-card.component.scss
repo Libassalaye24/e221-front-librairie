@@ -1,0 +1,47 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+:host ::ng-deep {
+
+  .resources-card {
+    width: 153px;
+    height: 107px;
+    border-radius: 10px;
+    gap:10px;
+    padding: 10px;
+    box-shadow: 4px 4px 17.6px theme.$np-shadow;
+    cursor: pointer;
+  }
+
+  .icons-content {
+    width: 100%;
+  }
+
+  .icon {
+    font-size: 25px;
+  }
+  .icon.icon-right {
+    cursor: pointer;
+  }
+
+  .description {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+  }
+
+  .resources-card.default {
+    background-color: theme.$np-100;
+    color: theme.$er-1000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover {
+      background-color: theme.$brown-50;
+      color: theme.$np-100;
+    }
+  }
+  .resources-card.active {
+    background-color: theme.$brown-50;
+    color: theme.$np-100;
+  }
+}

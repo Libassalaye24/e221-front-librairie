@@ -1,0 +1,34 @@
+<form [formGroup]="formGroup"
+      class="card flex flex-col justify-center">
+  @if (label)
+  {
+    <label for="selectedInput">
+      <span class="label {{ variant }}">{{ label }}</span>
+      <span *ngIf="required" class="ml-1">
+      <img [src]="assets" alt="" />
+    </span>
+    </label>
+  }
+  <p-iconfield>
+    <p-inputicon *ngIf="leftIcon" styleClass="pi pi-{{ leftIcon }}" />
+    <input
+      pInputText
+      [name]="name"
+      [type]="inputType"
+      id="selectedInput"
+      [placeholder]="placeholder"
+      class="w-full {{ variant }} input-{{rounded}} {{customClass}}"
+      [formControl]="inputControl"
+      [pSize]="size"
+    />
+    <p-inputicon *ngIf="rightIcon" styleClass="pi pi-{{ rightIcon }}" />
+  </p-iconfield>
+  <small
+    *ngIf="helperText"
+    class="helper-text gap-2"
+    [ngClass]="'helper-' + helperType"
+  >
+    <i [ngClass]="getHelperIconClass()"></i>
+    <span>{{ helperText }}</span>
+  </small>
+</form>

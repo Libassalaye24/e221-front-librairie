@@ -37,19 +37,6 @@
   }
 }
 
-//@media (max-width: 768px) {
-//  .sidebar-container {
-//    &.sidebar-expanded {
-//      @include theme.dimensions(80px);
-//    }
-//
-//    &.sidebar-collapsed {
-//      @include theme.dimensions(271px);
-//    }
-//  }
-//}
-
-
 .header {
   padding: 9px 1px 9px 1px;
   transition: padding 300ms cubic-bezier(0.4, 0, 0.2, 1);

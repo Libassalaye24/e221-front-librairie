@@ -1,4 +1,4 @@
-import { Component, input, InputSignal, OnInit } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 export type ButtonSeverity = | null
   | 'info'

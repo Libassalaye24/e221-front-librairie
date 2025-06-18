@@ -1,0 +1,22 @@
+<div class="tabs-content">
+  <div class="tabs-container">
+    @for (item of tabs; track $index) {
+      <div
+        (click)="returnSelectedTab($index, item)"
+        [ngClass]="{
+          'active': isTabActive($index)
+       }"
+        class="tabs-item">
+        @if (item.icon && item.icon !== '') {
+          <i [class]="'pi ' + item.icon + ' icon'"></i>
+        }
+        <span class="item-label"> {{ item.labelHeader }}</span>
+      </div>
+    }
+
+
+  </div>
+  <div class="template-container">
+    <ng-container #containerTemplates></ng-container>
+  </div>
+</div>

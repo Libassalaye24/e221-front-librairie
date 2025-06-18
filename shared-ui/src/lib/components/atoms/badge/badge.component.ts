@@ -14,6 +14,7 @@ export class BadgeComponent {
   severity = input.required<ButtonSeverity>();
   size = input< 'small' | 'large' | 'x-large'>('large');
   icon = input<string>()
+  iconLeft = input<string>()
 
   clickEvent = output<boolean>()
 

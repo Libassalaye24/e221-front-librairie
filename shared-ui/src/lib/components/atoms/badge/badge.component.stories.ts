@@ -38,6 +38,7 @@ export const WithIcon: Story = {
   args: {
     value: 'With icon',
     severity: 'warn',
-    icon: 'pi pi-times'
+    icon: 'pi pi-times',
+    iconLeft: 'pi pi-file'
   },
 };
