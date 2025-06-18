@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, effect, EventEmitter, input, Input, InputSignal, OnInit, Output } from '@angular/core';
 import { CommonModule, NgClass, NgForOf, NgIf } from '@angular/common';
 
 export interface MenuItem {
@@ -34,6 +34,7 @@ export interface ActionItem {
 export class SidebarComponent implements OnInit{
   isAdmin = true;
   isCollapsed = false;
+  isCollapsed2: InputSignal<boolean> = input(false);
 
   options = [
     { label: 'Option 1', value: 1 },
@@ -123,6 +124,12 @@ export class SidebarComponent implements OnInit{
   @Output() collapseToggled = new EventEmitter<boolean>();
   @Output() menuItemClicked = new EventEmitter<any>();
 
+
+  constructor() {
+    effect(() => {
+      this.isCollapsed = this.isCollapsed2();
+    });
+  }
 
   toggleCollapse(): void {
     this.isCollapsed = !this.isCollapsed;

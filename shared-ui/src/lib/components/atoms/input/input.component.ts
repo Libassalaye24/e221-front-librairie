@@ -47,8 +47,9 @@ export class InputComponent implements OnInit{
   @Input() state: InputState = 'default';
   @Input() helperType: HelperType = 'info';
   @Input() variant: InputVariant = 'default';
-  @Input() size: 'small' | 'medium' | 'large' = 'medium';
+  @Input() size: 'small'  | 'large' = 'small';
   @Input() rounded: 'rounded' | 'rounded-full' | '' = 'rounded-full';
+  @Input() customClass: string = '';
 
   assets = 'assets/icons/asterix.svg';
   formGroup: FormGroup = new FormGroup({});
