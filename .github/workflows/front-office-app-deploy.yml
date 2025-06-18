@@ -45,9 +45,7 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_E221_APP_PROJECT_ID }}
-          working-directory: ./
-          build-command: echo "skip build because already built above"
-          output-directory: dist/apps/e221-front-office/browser
+          working-directory: ./dist/apps/e221-front-office/browser
 
 permissions:
   contents: read
