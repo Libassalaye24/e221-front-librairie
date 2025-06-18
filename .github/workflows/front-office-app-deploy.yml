@@ -33,7 +33,7 @@ jobs:
         run: echo "Nx Cloud skipped"
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build e221-front-office
         run: npx nx build e221-front-office --configuration=ci --no-cloud --verbose
