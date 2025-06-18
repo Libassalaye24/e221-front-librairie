@@ -2,11 +2,11 @@ name: Deploy E221 Front Office to Vercel
 
 on:
   push:
-    branches: [develop] # Using master as defaultBase from your nx.json
+    branches: [main] # Using master as defaultBase from your nx.json
     paths:
       - 'apps/e221-front-office/**' # Only app changes
   pull_request:
-    branches: [develop]
+    branches: [main]
     paths:
       - 'apps/e221-front-office/**'
 
