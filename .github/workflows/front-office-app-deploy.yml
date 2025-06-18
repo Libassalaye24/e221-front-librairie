@@ -39,7 +39,7 @@ jobs:
         run: npx nx build e221-front-office --configuration=ci --no-cloud --verbose
         # Using the ci configuration from your project.json
 
-      - name: Deploy to Vercel
+      - name: Deploy app 221 to Vercel
         uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
