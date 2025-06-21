@@ -1,0 +1,78 @@
+<div class="min-h-screen relative flex flex-col">
+  <!-- Section haute -->
+  <div class="top-section flex-1 relative min-h-[50vh]">
+    <div
+      class="logo absolute top-full left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-4 w-full">
+      <div class="e221-logo flex flex-col items-center gap-2">
+                <img src="assets/images/e221-img-text.png" alt="Top Section Background" class="e221-img" />
+      </div>
+
+      <div class="card-login">
+        <div class="card-header">
+          <div class="flex-col flex items-start justify-center gap-4 ">
+            <p class="welcome-text">
+              Bienvenue sur <span class="e221-text">ECOLE 221</span>
+            </p>
+
+            <p class="login-text">Se connecter</p>
+          </div>
+
+          <img src="assets/images/221-logo.png" alt="Top Section Background" class="e221-logo" />
+        </div>
+
+        <div class="single-sign-one">
+          <button class="google-button">
+            <img src="assets/svg/google.svg" alt="google" class="google-button" />
+            <span class="google-text text-nowrap">Sign in with Google</span>
+          </button>
+
+          <button>
+            <img src="assets/svg/apple.svg" alt="apple" class="apple-button" />
+          </button>
+        </div>
+
+        <form class="form-data" [formGroup]="signInForm" (submit)="onSubmit()">
+          <lib-input
+            variant="default"
+            size="large"
+            rounded="rounded"
+            label="Entrez votre numéro de téléphone ou votre email"
+            formControlName="email"
+            placeholder="Entrez votre email" [required]="true"></lib-input>
+
+          <lib-input
+            variant="default"
+            size="large"
+            rounded="rounded"
+            label="Entrez votre mot de passe"
+            formControlName="password"
+            placeholder="Mot de passe" [required]="true"></lib-input>
+        </form>
+
+        <div class="flex justify-end">
+          <span class="forgot-password-text">
+            Mot de passe oublié ?
+          </span>
+        </div>
+
+        <lib-button
+          type="submit"
+          customClass="w-full"
+          [variant]="'outlined'"
+          [severity]="'danger'"
+          [size]="'x-large'"
+          [label]="'Se connecter'">
+        </lib-button>
+      </div>
+
+    </div>
+
+    <!--    <img src="assets/images/onBoardingDesign.png" alt="Top Section Design" class="design">-->
+  </div>
+
+  <!-- Section basse -->
+  <div class="bg-white flex-1 relative">
+    <!-- Content -->
+    <img src="assets/images/e221-text.png" alt="e221-text-img" class="e221-text-img" />
+  </div>
+</div>

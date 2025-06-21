@@ -5,7 +5,7 @@
         <table class="min-w-full">
           <thead>
           <tr>
-            @for (column of config?.columns!; track column.header; let index = $index) {
+            @for (column of config!.columns!; track column.header; let index = $index) {
               <th
                 [class]="column.sortable ? 'cursor-pointer ' + (column.className || '') : column.className || ''"
                 (click)="column.sortable && handleSort(column.header)"

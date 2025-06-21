@@ -1,0 +1,175 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+
+.e221-img{
+  width: 468px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.design {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  display: flex;
+  justify-self: center;
+  top: 0;
+  left: 0;
+  right: 10%;
+  bottom: 0;
+}
+
+.top-section {
+  background-color: theme.$er-1000;
+  position: relative;
+  overflow: visible;
+}
+
+.card-login {
+  box-shadow: 24px 28px 43.3px 0 #00000036;
+  width: 450px;
+  //height: 500px;
+  border-left: 8px solid theme.$brown-50;
+  border-top: 4px solid theme.$er-1000;
+  border-right: 8px solid theme.$er-1000;
+  border-bottom: 4px solid theme.$brown-50;
+  border-radius: 40px;
+  background-color: theme.$np-100;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-text{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.e221-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: theme.$er-1000;
+}
+
+
+.login-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+
+.e221-logo {
+  width: 50px;
+  height: 58px;
+}
+
+
+.google-button {
+  //width: 198px;
+  height: 45px;
+  border-radius: 9px;
+  background-color: #E9F1FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 8px;
+}
+
+
+.google-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #4285F4;
+  wrap-option: no-wrap;
+}
+
+
+.single-sign-one {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.apple-button {
+  //width: 198px;
+  height: 45px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form-data {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.forgot-password-text {
+  font-family: "Poppins", sans-serif;
+  color: theme.$inf-1010;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.e221-text-img {
+  position: absolute;
+  right: 0;
+  width: 200px;
+  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(-1%);
+}
+
+@media (max-width: 768px) {
+  .card-login {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .single-sign-one {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .google-button {
+    gap: 1px;
+  }
+}

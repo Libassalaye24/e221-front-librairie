@@ -1,12 +1,13 @@
-<form [formGroup]="formGroup"
+<form
+  [formGroup]="formGroup"
       class="card flex flex-col justify-center">
   @if (label)
   {
-    <label for="selectedInput">
+    <label class="flex" for="selectedInput">
       <span class="label {{ variant }}">{{ label }}</span>
       <span *ngIf="required" class="ml-1">
-      <img [src]="assets" alt="" />
-    </span>
+        <img src="assets/icons/asterix.svg" alt="asterix" />
+      </span>
     </label>
   }
   <p-iconfield>

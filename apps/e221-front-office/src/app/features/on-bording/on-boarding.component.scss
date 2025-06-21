@@ -1,0 +1,41 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+
+.logo {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.design {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  display: flex;
+  justify-self: center;
+  top: 0;
+  left: 0;
+  right: 10%;
+  bottom: 0;
+}
+
+.top-section {
+  background-color: theme.$brown-50;
+  position: relative;
+  overflow: visible;
+}
+
+
+.future-is-now {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 8%;
+  vertical-align: middle;
+  color: theme.$brown-50;
+}
