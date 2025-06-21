@@ -1,6 +1,7 @@
 import { Component, forwardRef, inject, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  ControlValueAccessor,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -32,7 +33,7 @@ import { InputTextModule } from 'primeng/inputtext';
     },
   ],
 })
-export class InputComponent implements OnInit{
+export class InputComponent implements OnInit, ControlValueAccessor{
   private readonly formBuilder = inject(FormBuilder);
 
   @Input() id = '';
@@ -55,6 +56,9 @@ export class InputComponent implements OnInit{
   formGroup: FormGroup = new FormGroup({});
   inputControl = new FormControl<string | null>(null);
 
+  private onChange = (value: any) => {};
+  private onTouched = () => {};
+
   ngOnInit(): void {
     if (this.state === 'disabled') {
       this.inputControl.disable();
@@ -62,6 +66,11 @@ export class InputComponent implements OnInit{
 
     this.formGroup = this.formBuilder.group({
       field: [null],
+    });
+
+    // Écouter les changements de valeur
+    this.inputControl.valueChanges.subscribe((value) => {
+      this.onChange(value);
     });
   }
 
@@ -77,5 +86,25 @@ export class InputComponent implements OnInit{
       default:
         return 'pi pi-info-circle';
     }
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    if (isDisabled) {
+      this.inputControl.disable();
+    } else {
+      this.inputControl.enable();
+    }
+  }
+
+  writeValue(value: any): void {
+    this.inputControl.setValue(value, { emitEvent: false });
   }
 }

@@ -14,11 +14,9 @@ import { Menu } from 'primeng/menu';
   standalone: true,
   imports: [
     CommonModule,
-    SelectComponent,
     Select,
     Paginator,
     FormsModule,
-    SplitButton,
     Menu,
   ],
   templateUrl: './generic-table.component.html',

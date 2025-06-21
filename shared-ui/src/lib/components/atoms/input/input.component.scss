@@ -9,9 +9,22 @@
   --p-inputtext-placeholder-color: #{theme.$np-110};
 
   label,
-  .p-inputtext,
+  .p-inputtext{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: theme.$np-0;
+  }
+
   .p-inputtext.p-placeholder {
-    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: theme.$np-200;
   }
 
   label {
@@ -23,7 +36,7 @@
   }
 
   .default {
-    --p-inputtext-border-color: #{theme.$np-110};
+    --p-inputtext-border-color: #{theme.$np-250};
     --p-inputtext-hover-border-color: #{theme.$np-30};
     --p-inputtext-focus-border-color: #{theme.$np-10};
   }

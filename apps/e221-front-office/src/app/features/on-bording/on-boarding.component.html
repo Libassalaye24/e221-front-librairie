@@ -1,0 +1,28 @@
+
+<div class="min-h-screen relative flex flex-col">
+  <!-- Section haute -->
+  <div class="top-section flex-1 relative min-h-[50vh]">
+    <div class="logo absolute top-full left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-4 w-full">
+      <div class="e221-logo flex flex-col items-center gap-2">
+        <img src="assets/images/221-logo.png" alt="Top Section Background" class="w-[100px] md:w-[150px]" />
+        <p class="future-is-now">Future is now !</p>
+      </div>
+      <lib-button
+        (click)="goToSignIn()"
+        [customClass]="'w-[250px] button-gradient'"
+        [rounded]="'rounded'"
+        [label]="'Suivant'"
+        [severity]="'secondary'"
+        [rightIcon]="'pi pi-arrow-right'"
+        [size]="'x-large'">
+      </lib-button>
+    </div>
+
+    <img src="assets/images/onBoardingDesign.png" alt="Top Section Design" class="design">
+  </div>
+
+  <!-- Section basse -->
+  <div class="bg-white flex-1">
+    <!-- Content -->
+  </div>
+</div>
