@@ -23,6 +23,7 @@ export interface ActionItem {
 @Component({
   selector: 'lib-sidebar',
   templateUrl: './sidebar.component.html',
+  standalone: true,
   styleUrl: './sidebar.component.scss',
   imports: [
     NgClass,

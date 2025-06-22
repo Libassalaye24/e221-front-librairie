@@ -26,6 +26,7 @@ export class ButtonComponent implements OnInit {
   leftIcon = input<string>('');
   rightIcon = input<string>('');
   variant = input<'outlined' | 'text' | undefined>(undefined);
+  typeButton = input<'submit' | 'button'>('button');
   outlined = input<boolean>(false);
   severity = input.required<ButtonSeverity>();
   size = input< 'small' | 'large' | 'x-large'>('large');

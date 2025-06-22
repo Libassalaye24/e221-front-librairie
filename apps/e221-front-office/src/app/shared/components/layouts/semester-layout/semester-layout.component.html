@@ -1,0 +1,24 @@
+<div class="semester-layout">
+  <div class="flex gap-4">
+    <p class="title-page">
+      {{ titlePage }}
+    </p>
+
+    @if (numberOfElements) {
+      <span class="number-of-elements">({{numberOfElements}})</span>
+    }
+  </div>
+
+  @if (showSemester)
+  {
+    <div class="select-semester">
+      <lib-select
+        [placeholder]="'Semestre'"
+        label=""
+        [options]="semesterOptions()"
+        [ngModel]="semesterControl"
+      ></lib-select>
+
+    </div>
+  }
+</div>

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/cor
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent, InputComponent } from '@e221-front-office/shared-ui';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,6 +15,7 @@ import { ButtonComponent, InputComponent } from '@e221-front-office/shared-ui';
 export default class SignInComponent implements OnInit {
   // injections
   private readonly formBuilder: FormBuilder = inject(FormBuilder);
+  private readonly router: Router = inject(Router);
 
   // properties
   protected signInForm = this.formBuilder.group({
@@ -29,5 +31,10 @@ export default class SignInComponent implements OnInit {
   // methods
   onSubmit() {
     console.log('Form submitted:', this.signInForm.value);
+    this.goToDashboard();
+  }
+
+  goToDashboard(): void {
+    this.router.navigate(['/dashboard']).then();
   }
 }

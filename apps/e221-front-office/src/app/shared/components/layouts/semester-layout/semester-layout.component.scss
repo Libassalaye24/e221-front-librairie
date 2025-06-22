@@ -1,0 +1,29 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+.semester-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+}
+
+.title-page {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: theme.$er-1000;
+
+}
+
+
+.number-of-elements {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: theme.$brown-50;
+}

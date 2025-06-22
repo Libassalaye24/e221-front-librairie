@@ -1,0 +1,13 @@
+<div class="layout-container flex justify-between ">
+  <div class="sidebar-content">
+    <lib-sidebar [isCollapsed2]="collapsed()"></lib-sidebar>
+  </div>
+  <div class="layout-content w-full flex flex-col">
+    <lib-navbar (toggleCollapseEvent)="toggleSidebar()"></lib-navbar>
+
+    <div class="body-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>

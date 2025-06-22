@@ -1,4 +1,5 @@
 <button
+  [type]="typeButton()"
   class="button-content button-{{severity()}} {{size()}}  {{rounded()}} {{customClass()}}"
   [ngClass]="{ 'outlined' : variant() === 'outlined' }"
   [disabled]="disabled() || loading()"

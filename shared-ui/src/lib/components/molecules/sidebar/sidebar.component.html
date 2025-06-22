@@ -10,19 +10,19 @@
     <div
       class="header-content justify-between relative"
     >
-      <button
-        type="button"
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        (click)="toggleCollapse()"
-        aria-label="Toggle navigation"
-        aria-controls="hs-sidebar-content-push"
-        data-hs-overlay="#hs-sidebar-content-push"
-        [ngClass]="{ 'absolute right-0 top-0  mt-0': !isCollapsed }"
-        class=" flex justify-center items-center gap-x-3 size-8 text-sm text-gray-600 hover:color-gray-100 rounded-full disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:color-gray-100 dark:text-neutral-400 dark:hover:color-neutral-700 dark:focus:color-neutral-700 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-      >
-        <img class="w-24 h-24 " src="assets/icons/collapse-sidebar.svg" alt="collapse ">
-      </button>
+<!--      <button-->
+<!--        type="button"-->
+<!--        aria-expanded="false"-->
+<!--        aria-haspopup="dialog"-->
+<!--        (click)="toggleCollapse()"-->
+<!--        aria-label="Toggle navigation"-->
+<!--        aria-controls="hs-sidebar-content-push"-->
+<!--        data-hs-overlay="#hs-sidebar-content-push"-->
+<!--        [ngClass]="{ 'absolute right-0 top-0  mt-0': !isCollapsed }"-->
+<!--        class=" flex justify-center items-center gap-x-3 size-8 text-sm text-gray-600 hover:color-gray-100 rounded-full disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:color-gray-100 dark:text-neutral-400 dark:hover:color-neutral-700 dark:focus:color-neutral-700 dark:hover:text-neutral-200 dark:focus:text-neutral-200"-->
+<!--      >-->
+<!--        <img class="w-24 h-24 " src="assets/icons/collapse-sidebar.svg" alt="collapse ">-->
+<!--      </button>-->
       <div *ngIf="!isCollapsed" class="header-info mt-2" >
         <img [src]="logoUrl" class="w-12" alt="logo">
         <p class="subtitle">

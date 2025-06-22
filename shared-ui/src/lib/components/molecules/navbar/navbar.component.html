@@ -33,10 +33,18 @@
       src="assets/icons/bell-ring.svg"
       class="notification cursor-pointer" alt="notification"
     >
-    <img src="assets/images/profil.png"
-         class="profil-image cursor-pointer"
-         alt="profil"
-    >
+
+
+    <button type="button" (click)="menu.toggle($event)">
+      <img src="assets/images/profil.png"
+           class="profil-image cursor-pointer"
+           alt="profil"
+      >
+    </button>
+    <p-menu #menu [model]="items" [popup]="true" [styleClass]="'custom-menu'" />
+
+
+
   </div>
 
 </div>

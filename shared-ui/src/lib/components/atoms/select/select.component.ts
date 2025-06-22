@@ -1,20 +1,28 @@
 import { HelperType } from '../../../models';
 import { SelectModule } from 'primeng/select';
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, inject, Input, OnInit } from '@angular/core';
 import {
   FormGroup,
   Validators,
   FormBuilder,
-  ReactiveFormsModule,
+  ReactiveFormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor
 } from '@angular/forms';
 @Component({
   selector: 'lib-select',
+  standalone: true,
   styleUrl: './select.component.scss',
   templateUrl: './select.component.html',
   imports: [CommonModule, ReactiveFormsModule, SelectModule],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SelectComponent),
+      multi: true,
+    },
+  ],
 })
-export class SelectComponent implements OnInit {
+export class SelectComponent implements OnInit, ControlValueAccessor {
   formBuilder = inject(FormBuilder);
 
   assets = 'icons/asterix.svg';
@@ -52,5 +60,14 @@ export class SelectComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       selectedCity: ['5', [Validators.required]],
     });
+  }
+
+  registerOnChange(fn: any): void {
+  }
+
+  registerOnTouched(fn: any): void {
+  }
+
+  writeValue(obj: any): void {
   }
 }

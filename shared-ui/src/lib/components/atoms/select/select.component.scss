@@ -7,6 +7,9 @@
   --p-select-background: #{theme.$np-100};
   --p-select-placeholder-color: #{theme.$np-0};
 
+  .p-select {
+    box-shadow: 4px 4px 17.6px 0 theme.$np-shadow;
+  }
   label,
   .p-select-label,
   .p-select-label.p-placeholder {
@@ -26,7 +29,7 @@
   }
 
   .default {
-    --p-select-border-color: #{theme.$np-20};
+    --p-select-border-color: #{theme.$np-100};
     --p-select-hover-border-color: #{theme.$np-30};
     --p-select-focus-border-color: #{theme.$np-10};
   }
