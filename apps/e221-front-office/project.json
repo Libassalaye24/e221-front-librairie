@@ -8,12 +8,16 @@
   "targets": {
     "build": {
       "executor": "@nx/angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/e221-front-office",
         "index": "apps/e221-front-office/src/index.html",
         "browser": "apps/e221-front-office/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/e221-front-office/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -40,7 +44,9 @@
             "output": "./assets/icons/"
           }
         ],
-        "styles": ["apps/e221-front-office/src/styles/styles.scss"],
+        "styles": [
+          "apps/e221-front-office/src/styles/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -62,7 +68,13 @@
         "development": {
           "optimization": false,
           "extractLicenses": false,
-          "sourceMap": true
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/e221-front-office/src/environments/environment.ts",
+              "with": "apps/e221-front-office/src/environments/environment.development.ts"
+            }
+          ]
         }
       },
       "defaultConfiguration": "production"

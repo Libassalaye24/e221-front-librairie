@@ -1,0 +1,39 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+
+.import-buttons {
+  width: 595px;
+  height: 58px;
+  border-radius: 10px;
+  padding: 18px 11px;
+  gap: 20px;
+  background-color: theme.$np-100;
+  @include theme.centering(space-between, center, null, null);
+  box-shadow: 4px 4px 32.4px 0 theme.$np-shadow;
+}
+
+.add-buttons {
+  height: 58px;
+  border-radius: 10px;
+  padding: 18px 11px;
+  gap: 20px;
+  background-color: theme.$np-100;
+  @include theme.centering(space-between, center, null, null);
+  box-shadow: 4px 4px 32.4px 0 theme.$np-shadow;
+}
+
+
+
+.download-button {
+  width: 210px;
+}
+
+
+.header-page {
+  @include theme.centering(space-between, center, null, null);
+}
+
+
+.filter-search {
+  box-shadow: 4px 4px 17.6px 0 theme.$np-shadow;
+}

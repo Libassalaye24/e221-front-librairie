@@ -1,0 +1,58 @@
+<div class="flex flex-col gap-4">
+  <app-semester-layout
+    [titlePage]="'Liste des étudiants'"
+    [numberOfElements]="String(MOCK_STUDENTS.length)">
+  </app-semester-layout>
+
+  <div class="header-page ">
+    <div class="import-buttons">
+      <lib-button
+        customClass="download-button"
+        [variant]="'outlined'"
+        [severity]="'black'"
+        [rightIcon]="'pi pi-file-o'"
+        [size]="'large'"
+        rounded="rounded"
+        [label]="'Télécharger'">
+      </lib-button>
+
+      <lib-button
+        [customClass]="'download-button'"
+        [variant]="'outlined'"
+        [severity]="'black'"
+        [rightIcon]="'pi pi-file-o'"
+        [size]="'large'"
+        [label]="'Importer  '"
+        rounded="rounded"
+      >
+      </lib-button>
+    </div>
+
+    <div class="add-buttons">
+      <lib-button
+        customClass="download-button text-nowrap"
+        [variant]="'outlined'"
+        [severity]="'danger'"
+        [leftIcon]="'pi pi-user-plus'"
+        [size]="'large'"
+        rounded="rounded"
+        [label]="'Inscription / Réinscription'">
+      </lib-button>
+    </div>
+  </div>
+
+  <div class="header-filter">
+    <app-header-filter (formEvent)="onFilter($event)" ></app-header-filter>
+  </div>
+
+  <div class="table-list">
+    <lib-generic-table [config]="buildTableConfig()"></lib-generic-table>
+  </div>
+</div>
+
+
+<!-- templates -->
+<ng-template #studentStatusTemplate>
+  <lib-badge value="Active" [severity]="'success'"></lib-badge>
+</ng-template>
+<!-- templates -->

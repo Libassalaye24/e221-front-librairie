@@ -1,0 +1,32 @@
+<form [formGroup]="formFilter" class="header-filter">
+  <div class="header-filter-inputs">
+    <div class="w-[215px]">
+      <lib-select
+        [placeholder]="'Filtre par classe'"
+        label=""
+        [options]="classesOptions()"
+        [formControlName]="'class'"
+      ></lib-select>
+    </div>
+
+    <div class="w-[215px]">
+      <lib-select
+        [placeholder]="'Filtre par status'"
+        label=""
+        [options]="statusOptions()"
+        [formControlName]="'status'"
+      ></lib-select>
+    </div>
+
+  </div>
+  <div class="header-filter-search">
+    <lib-input
+      [placeholder]="'Rechercher un étudiant'"
+      label=""
+      [formControlName]="'search'"
+      leftIcon="search"
+      rounded="rounded"
+    ></lib-input>
+  </div>
+
+</form>
