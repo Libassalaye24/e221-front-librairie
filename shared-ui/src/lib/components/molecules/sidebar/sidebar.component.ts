@@ -110,7 +110,7 @@ export class SidebarComponent implements OnInit{
           label: 'Inscriptions / Réinscriptions',
           active: false,
           hasNotification: false,
-          route: '/enrolment',
+          route: '/enrolment/list',
         },
         {
           icon: 'pi-building',

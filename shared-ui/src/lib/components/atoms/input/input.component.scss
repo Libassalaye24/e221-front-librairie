@@ -16,6 +16,11 @@
     line-height: 100%;
     letter-spacing: 0;
     color: theme.$np-0;
+
+  }
+
+  .p-inputtext {
+    box-shadow: 4px 4px 17.6px 0 theme.$np-shadow;
   }
 
   .p-inputtext.p-placeholder {

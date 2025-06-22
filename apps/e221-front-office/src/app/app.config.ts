@@ -4,6 +4,7 @@ import { appRoutes } from './app.routes';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { LOGGER_PROVIDER } from './shared/services/logger/logger.provider';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,6 +19,6 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     provideRouter(appRoutes),
-
+    LOGGER_PROVIDER
   ],
 };

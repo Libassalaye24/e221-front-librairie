@@ -88,6 +88,12 @@
                                 {{ getCellValue(item, column) }}
                               } @else {
 
+                                @if (column.isImage) {
+                                  <img [src]="getCellValue(item, column)" alt="" class="w-10 h-10 object-cover rounded-full" />
+                                } @else {
+                                  {{ getCellValue(item, column) }}
+                                }
+
                                 <!--                          @if (column.field && column.field === 'orderUrl') {-->
                                   <!--                           <div class="flex items-center gap-2">-->
                                   <!--                             {{ getCellValue(item, column) }}-->
@@ -96,7 +102,7 @@
                                   <!--                          } @else {-->
                                   <!--                            {{ getCellValue(item, column) }}-->
                                   <!--                          }-->
-                                {{ getCellValue(item, column) }}
+
                               }
                             }
                           }

@@ -1,0 +1,11 @@
+@use "shared-ui/src/lib/styles/extension/theme" as theme;
+
+
+.header-filter {
+  @include theme.centering(space-between, center, null, null);
+}
+
+.header-filter-inputs {
+  @include theme.centering(start, center, null, null);
+  gap: 20px;
+}

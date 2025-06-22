@@ -1,5 +1,6 @@
 import { Route } from '@angular/router';
 import DefaultLayoutComponent from './shared/components/layouts/default-layout/default-layout.component';
+import { STUDENT_ROUTES } from './features/student/student.routes';
 
 export const appRoutes: Route[] = [
   // Redirect empty path to '/sign-in'
@@ -27,6 +28,10 @@ export const appRoutes: Route[] = [
         path: 'dashboard',
         loadChildren: () => import('./features/dashbord/dashboard.routes').then(m => m.DASHBOARD_ROUTES),
       },
+      {
+        path: 'enrolment',
+        loadChildren: () => import('./features/student/student.routes').then(m => m.STUDENT_ROUTES),
+      }
     ]
   }
 ];

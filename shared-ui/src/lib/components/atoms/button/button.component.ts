@@ -9,7 +9,8 @@ export type ButtonSeverity = | null
   | 'success'
   | 'primary'
   | 'contrast'
-  | 'secondary';
+  | 'secondary'
+  | 'black';
 
 @Component({
   selector: 'lib-button',

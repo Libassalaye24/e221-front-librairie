@@ -1,7 +1,7 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent, SidebarComponent } from '@e221-front-office/shared-ui';
-import { RouterOutlet } from '@angular/router';
+import { MenuItem, NavbarComponent, SidebarComponent } from '@e221-front-office/shared-ui';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-default-layout',
@@ -11,6 +11,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './default-layout.component.scss',
 })
 export default class DefaultLayoutComponent {
+  // injections
+  private readonly router: Router = inject(Router);
+
   // properties
   collapsed: WritableSignal<boolean> = signal<boolean>(false);
 
@@ -18,4 +21,9 @@ export default class DefaultLayoutComponent {
   toggleSidebar() {
     this.collapsed.set(!this.collapsed());
   }
+
+  onMenuClicked($event: MenuItem) {
+      this.router.navigate([$event.route]).then()
+  }
 }
+

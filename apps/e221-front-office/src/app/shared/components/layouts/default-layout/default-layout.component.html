@@ -1,9 +1,11 @@
 <div class="layout-container flex justify-between ">
-  <div class="sidebar-content">
-    <lib-sidebar [isCollapsed2]="collapsed()"></lib-sidebar>
+  <div class="sidebar-content fixed top-0 left-0 h-screen z-40 transition-all duration-300 ease-in-out">
+    <lib-sidebar (menuItemClicked)="onMenuClicked($event)" [isCollapsed2]="collapsed()"></lib-sidebar>
   </div>
-  <div class="layout-content w-full flex flex-col">
-    <lib-navbar (toggleCollapseEvent)="toggleSidebar()"></lib-navbar>
+  <div class="layout-content w-full flex flex-col pl-[270px]" [ngClass]="collapsed() ? 'pl-[80px]' : 'pl-[270px]'">
+    <div class="navbar fixed top-0 left-0 right-0 z-30  transition-all duration-300 ease-in-out"  [ngClass]="collapsed() ? 'pl-[80px]' : 'pl-[270px]'">
+      <lib-navbar (toggleCollapseEvent)="toggleSidebar()"></lib-navbar>
+    </div>
 
     <div class="body-content">
       <router-outlet></router-outlet>

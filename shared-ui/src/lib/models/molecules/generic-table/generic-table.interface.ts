@@ -8,6 +8,7 @@ export interface TableColumn<T> {
   field: keyof T | ((item: T) => string | number);
   sortable?: boolean;
   isAmount?: boolean;
+  isImage?: boolean;
   className?: string;
   class?: string;
   template?: TemplateRef<{ $implicit: T }> | ((item: T) => string);

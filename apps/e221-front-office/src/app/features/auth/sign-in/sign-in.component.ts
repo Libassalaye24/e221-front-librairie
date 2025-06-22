@@ -35,6 +35,6 @@ export default class SignInComponent implements OnInit {
   }
 
   goToDashboard(): void {
-    this.router.navigate(['/dashboard']).then();
+    this.router.navigate(['/enrolment/list']).then();
   }
 }
