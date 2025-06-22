@@ -28,6 +28,8 @@ export default class RegistrationListComponent {
   // injections
   private readonly router: Router = inject(Router);
   private readonly logger: Logger = inject(Logger);
+  protected readonly MOCK_STUDENTS = MOCK_STUDENTS;
+  protected readonly String = String;
 
   // properties
   @ViewChild('studentStatusTemplate', { static: false })
@@ -107,6 +109,5 @@ export default class RegistrationListComponent {
     this.logger.log("Data {}", $event)
   }
 
-  protected readonly MOCK_STUDENTS = MOCK_STUDENTS;
-  protected readonly String = String;
+
 }

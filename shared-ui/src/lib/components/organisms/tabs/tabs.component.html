@@ -17,6 +17,10 @@
 
   </div>
   <div class="template-container">
-    <ng-container #containerTemplates></ng-container>
+    <ng-container
+      *ngIf="containerTemplateRef"
+      [ngTemplateOutlet]="containerTemplateRef">
+    </ng-container>
+
   </div>
 </div>
