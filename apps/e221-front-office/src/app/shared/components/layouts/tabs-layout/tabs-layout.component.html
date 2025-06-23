@@ -1,0 +1,7 @@
+<div class="flex flex-col gap-2">
+  <lib-tabs-tabs (selectedTab)="onSelectTab($event)" [tabs]="tabs">
+    <ng-template #containerTemplates>
+        <router-outlet></router-outlet>
+    </ng-template>
+  </lib-tabs-tabs>
+</div>

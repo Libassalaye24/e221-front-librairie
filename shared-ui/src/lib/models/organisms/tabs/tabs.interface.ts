@@ -3,4 +3,5 @@ export interface Tabs {
   icon ?: string;
   header: string;
   labelHeader: string;
+  route?: string;
 }

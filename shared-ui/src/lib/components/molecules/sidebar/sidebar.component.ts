@@ -1,5 +1,7 @@
 import { Component, effect, EventEmitter, input, Input, InputSignal, OnInit, Output } from '@angular/core';
 import { CommonModule, NgClass, NgForOf, NgIf } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 export interface MenuItem {
   icon: string;
@@ -61,7 +63,13 @@ export class SidebarComponent implements OnInit{
           icon: 'pi-th-large',
           label: 'Dashboard',
           active: true,
-          route: '/home',
+          route: '/dashboard',
+        },
+        {
+          icon: 'pi-folder',
+          label: 'Gestion Ressources',
+          active: false,
+          route: '/resources',
         },
         {
           icon: 'pi-calendar',
@@ -126,10 +134,11 @@ export class SidebarComponent implements OnInit{
   @Output() menuItemClicked = new EventEmitter<any>();
 
 
-  constructor() {
+  constructor(private readonly router: Router) {
     effect(() => {
       this.isCollapsed = this.isCollapsed2();
     });
+
   }
 
   toggleCollapse(): void {
@@ -163,6 +172,22 @@ export class SidebarComponent implements OnInit{
   ngOnInit(): void {
     this.setCollapseBasedOnScreen();
     this.eventScreenSizeListener();
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.updateActiveMenuItem(event.urlAfterRedirects);
+      });
+
+    this.updateActiveMenuItem(this.router.url);
+  }
+
+  updateActiveMenuItem(currentRoute: string): void {
+    for (const section of this.menuItems) {
+      for (const item of section.items) {
+        item.active = currentRoute.startsWith(item.route);
+      }
+    }
   }
 
   private setCollapseBasedOnScreen() {

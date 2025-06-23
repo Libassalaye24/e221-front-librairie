@@ -1,0 +1,17 @@
+<div class="flex flex-col gap-4">
+  <div class="flex justify-items-center gap-4 h-auto">
+
+    @for (item of resourcesList(); track $index) {
+      <lib-resources-card-resources-card
+        [variant]="getActive(item)"
+          [description]="item.label"
+      >
+      </lib-resources-card-resources-card>
+    }
+
+  </div>
+
+  <div class="body-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
