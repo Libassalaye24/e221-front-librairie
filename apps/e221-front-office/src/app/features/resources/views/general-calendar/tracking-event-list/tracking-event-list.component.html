@@ -1,0 +1,16 @@
+<div class="default-container">
+  <app-school-year-header-page></app-school-year-header-page>
+
+  <div class="table-list">
+    <lib-generic-table [config]="buildTableConfig()"></lib-generic-table>
+  </div>
+
+</div>
+
+
+
+<!-- templates -->
+<ng-template #eventTrackingStatusTemplate let-item>
+  <lib-badge [value]="getStatusText(item)" [severity]="getStatus(item)"></lib-badge>
+</ng-template>
+<!-- templates -->
